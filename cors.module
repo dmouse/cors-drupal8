@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * @file
+ * Contains cors.module
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+
+function cors_help($route_name, RouteMatchInterface $route_match)
+{
+  switch ($route_name) {
+    // Main module help for the cors module.
+    case 'help.page.cors':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('CORS Drupal module') . '</p>';
+      return $output;
+    break;
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+
+function cors_theme()
+{
+  $theme = [];
+
+  return $theme;
+}

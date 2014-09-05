@@ -1,0 +1,5 @@
+name: cors
+type: module
+description: CORS Drupal module
+core: 8.x
+package: REST

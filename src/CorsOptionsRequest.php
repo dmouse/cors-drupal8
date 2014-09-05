@@ -23,12 +23,14 @@ class CorsOptionsRequest implements EventSubscriberInterface {
     $request = $event->getRequest();
 
     if ($request->getMethod() == 'OPTIONS') {
-      $response = new Response();
+      $response = new Response(NULL);
       $response->setStatusCode(200);
       $response->headers->set('Access-Control-Allow-Origin', '*');
       $response->headers->set('Access-Control-Allow-Headers', 'Authorization');
       $response->headers->set('Access-Control-Allow-Methods', 'GET, POST, PATCH, DELETE, OPTIONS');
+      
       $event->setResponse($response);
+      $event->stopPropagation();
       return ;
     }
   }

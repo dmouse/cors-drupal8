@@ -28,6 +28,7 @@ class CorsOptionsRequest implements EventSubscriberInterface {
       $response->headers->set('Access-Control-Allow-Credentials', 'true');
       $response->headers->set('Access-Control-Allow-Methods', 'GET, POST, PATCH, DELETE, OPTIONS');
       $event->setResponse($response);
+      return ;
     }
   }
 }

@@ -1,5 +1,6 @@
 services:
-  cors.options:
-    class: Drupal\cors\CorsOptionsRequest
+  cors.middleware.options:
+    class: Drupal\cors\StackOptionsRequest
+    arguments: ['@kernel']
     tags:
-      - { name: event_subscriber }
+      - { name: http_middleware }

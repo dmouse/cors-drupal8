@@ -39,18 +39,19 @@ class StackOptionsRequest implements HttpKernelInterface {
    */
   public function handle(Request $request, $type = self::MASTER_REQUEST, $catch = TRUE) {
 
+    $response = $this->app->handle($request, $type, $catch);
+
     if ($request->getMethod() == 'OPTIONS') {
-      $response = new Response(NULL);
+      $response->setContent(Null);
       $response->setStatusCode(200);
       $response->headers->set('Access-Control-Allow-Origin', '*');
       $response->headers->set('Access-Control-Allow-Headers', 'Authorization');
       $response->headers->set('Access-Control-Allow-Methods', 'GET, POST, PATCH, DELETE, OPTIONS');
       
-      $response->send();
-      return ;
+      return $response;
     }
 
-    return $this->httpKernel->handle($request, $type, $catch);
+    return $response;
   }
 
 }

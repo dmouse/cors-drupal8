@@ -1,0 +1,7 @@
+cors.allow_cors:
+  path: '/cors/settings/AllowCors'
+  defaults:
+    _form: '\Drupal\cors\Form\AllowCors'
+    _title: 'AllowCors'
+  requirements:
+    _permission: 'access administration pages'

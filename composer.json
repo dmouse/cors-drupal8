@@ -1,0 +1,22 @@
+{
+  "name": "drupal/cors",
+  "description": "Enable cors options in Drupal 8",
+  "minimum-stability": "stable",
+  "license": "GLP2",
+  "authors": [
+    {
+      "name": "David Flores",
+      "email": "dmousex@gmail.com"
+    }
+  ],
+  "type": "drupal-module",
+  "require": {
+    "composer/installers": "~1.0",
+    "asm89/stack-cors": "0.2.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Drupal\\cors\\": "src"
+    }
+  }
+}
